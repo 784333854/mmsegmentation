@@ -165,6 +165,7 @@ class SegLocalVisualizer(Visualizer):
                 text = classes[classes_id]
                 (label_width, label_height), baseline = cv2.getTextSize(
                     text, font, fontScale, thickness)
+                mask = np.ascontiguousarray(mask, dtype=np.uint8)
                 mask = cv2.rectangle(mask, loc,
                                      (loc[0] + label_width + baseline,
                                       loc[1] + label_height + baseline),
